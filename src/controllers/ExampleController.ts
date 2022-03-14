@@ -28,7 +28,6 @@ export class ExampleController {
                 req.body.minCount,
                 req.body.maxCount
             );
-            console.log(result);
 
             res.status(200).json({
                 'code': 1,
