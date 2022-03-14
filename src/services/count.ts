@@ -30,10 +30,11 @@ export class CountService {
     this.keygen = new Keygen();
   }
 
-  async create(totalCount: number) {
+  // Dummy Implementation of Create count
+  async create(count: [number]) {
     let countObj = new CountModel({
       key: this.keygen.genId(),
-      totalCount: totalCount,
+      counts: count,
       createdAt: new Date()
     });
 
@@ -45,7 +46,6 @@ export class CountService {
               minCount: number,
               maxCount: number) {
     try {
-
         if (minCount < 0 || maxCount < 0) {
             throw new ValueError('minCount or maxCount is less than 0.');
         }
@@ -79,7 +79,7 @@ export class CountService {
                 }
             },
             {
-                '$limit': 5
+                '$limit': 100
             }
         ]).exec();
     } catch(err: unknown) {

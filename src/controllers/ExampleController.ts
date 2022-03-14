@@ -19,19 +19,8 @@ export class ExampleController {
         })
     }
 
-    @Post('count')
-    private async setCount(req: Request, res: Response) {
-        Logger.Info('came here')
-        await this.countService.create(req.body.totalCount);
-
-        res.status(200).json({
-            message: 'SUCCESS'
-        });
-    }
-
     @Post('count/list')
     private async listCount(req: Request, res: Response) {
-        Logger.Info('came here')
         try {
             let result = await this.countService.query(
                 req.body.startDate,
@@ -48,17 +37,9 @@ export class ExampleController {
             });
         } catch(err: any) {
             res.status(400).json({
-                'code': err.code,
+                'code': 0,
                 'message': err.message
             })
         }
     }
-
-    // @Get(':msg')
-    // private getMessage(req: Request, res: Response) {
-    //     // Logger.Info(req.params.msg);
-    //     res.status(200).json({
-    //         message: req.params.msg,
-    //     });
-    // }
 }

@@ -7,7 +7,7 @@
     "test": "none",
     "start-dev": "nodemon --config \"./util/nodemon.json\"/",
     "build": "rm -rf ./build/ && tsc",
-    "start": "node build/start.js"
+    "start": "node build/src/start.js"
   },
   "author": "Tumul Richesh",
   "license": "ISC",
