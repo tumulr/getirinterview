@@ -12,6 +12,13 @@ export class ExampleController {
         this.countService = new CountService();
     }
 
+    @Get('test')
+    private testCheck(req: Request, res: Response) {
+        res.status(200).json({
+            message: 'SUCCESS'
+        })
+    }
+
     @Post('count')
     private async setCount(req: Request, res: Response) {
         Logger.Info('came here')
