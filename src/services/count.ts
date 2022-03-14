@@ -50,6 +50,10 @@ export class CountService {
             throw new ValueError('minCount or maxCount is less than 0.');
         }
 
+        if (maxCount < minCount) {
+          throw new ValueError('minCount is greater than maxCount');
+        }
+
         if (
             DateValidator.validate(startDate) === false ||
             DateValidator.validate(endDate) === false
