@@ -9,7 +9,13 @@
 2. npm run build
 3. npm run start
 
-#### Code Structure
-1. Models - It contains DB models which will be used by mongoose to do DB operations.
-2. Services - Classes that are used to perform operation on an entity.
-3. Controllers - This is where the request will be handled and a suitable response will be given.
+#### List API
+1. Open Postman or any other client
+2. Go to [POST - http://52.66.243.38:3000/api/count/list]
+3. JSON Payload
+{
+    "startDate": "2012-01-26",
+    "endDate": "2022-02-02",
+    "minCount": 1000,
+    "maxCount": 1100
+}
